@@ -1,0 +1,38 @@
+<!-- <div class="container">
+  <div class="product-details">
+    <div class="product-images">
+      <img *ngFor="let image of product.images" [src]="image" alt="{{ product.name }}">
+    </div>
+
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.brand }}</p>
+      <p>{{ product.description }}</p>
+
+      <div class="product-specs">
+        <h3>Specifications:</h3>
+        <ul>
+          <li *ngFor="let spec of product.features">{{ spec }}</li>
+        </ul>
+      </div>
+
+      <div class="product-pricing">
+        <h3>Price: {{ product.price | currency }}</h3>
+        <p>Rating: {{ product.ratings }} ★</p>
+        <button mat-raised-button color="accent" (click)="addToCart(product)">
+          Add to Cart
+        </button>
+        <button mat-raised-button color="warn" (click)="addToWishlist(product)">
+          Add to Wishlist
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-reviews">
+    <h3>Customer Reviews</h3>
+    <div *ngFor="let review of product.reviews">
+      <p><strong>{{ review.user }}:</strong> {{ review.comment }} ({{ review.rating }} ★)</p>
+    </div>
+  </div>
+</div> -->

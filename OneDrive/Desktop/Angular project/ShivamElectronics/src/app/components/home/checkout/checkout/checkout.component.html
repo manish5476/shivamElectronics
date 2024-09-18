@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>Checkout</h2>
+
+  <form (ngSubmit)="placeOrder()">
+    <mat-form-field appearance="fill">
+      <mat-label>Full Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter your name"
+        [(ngModel)]="checkoutData.fullName"
+        name="fullName"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Shipping Address</mat-label>
+      <input
+        matInput
+        placeholder="Enter your shipping address"
+        [(ngModel)]="checkoutData.shippingAddress"
+        name="shippingAddress"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Payment Method</mat-label>
+      <mat-select
+        [(ngModel)]="checkoutData.paymentMethod"
+        name="paymentMethod"
+        required
+      >
+        <mat-option value="stripe">Credit/Debit Card</mat-option>
+        <mat-option value="paypal">PayPal</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <ul>
+        <li *ngFor="let item of cartItems">
+          {{ item.product.name }} - {{ item.quantity }} x
+          {{ item.product.price | currency }}
+        </li>
+      </ul>
+      <h4>Total: {{ getTotalPrice() | currency }}</h4>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Place Order</button>
+  </form>
+</div>

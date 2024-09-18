@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="home-header">
+    <h1>Featured Smartphones</h1>
+    <input
+      type="text"
+      placeholder="Search smartphones..."
+      [(ngModel)]="searchQuery"
+      (input)="filterProducts()"
+    />
+  </div>
+
+  <div class="product-grid">
+    <mat-card *ngFor="let product of filteredProducts">
+      <img mat-card-image [src]="product.images[0]" alt="{{ product.name }}" />
+      <mat-card-content>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.brand }}</p>
+        <p>Price: {{ product.price | currency }}</p>
+        <p>Rating: {{ product.ratings }} ★</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/product', product._id]"
+        >
+          View Details
+        </button>
+        <button mat-raised-button color="accent" (click)="addToCart(product)">
+          Add to Cart
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

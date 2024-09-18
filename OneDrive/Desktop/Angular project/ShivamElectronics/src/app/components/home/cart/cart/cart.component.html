@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Your Shopping Cart</h2>
+
+  <div *ngIf="cartItems.length === 0">
+    <p>Your cart is empty. Start adding items!</p>
+    <button mat-raised-button color="primary" routerLink="/">
+      Continue Shopping
+    </button>
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems">
+          <td>{{ item.product.name }}</td>
+          <td>{{ item.product.price | currency }}</td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                [(ngModel)]="item.quantity"
+                (change)="updateCartItem(item)"
+              />
+            </mat-form-field>
+          </td>
+          <td>{{ item.product.price * item.quantity | currency }}</td>
+          <td>
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="removeFromCart(item.product._id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <h3>Total Price: {{ getTotalPrice() | currency }}</h3>
+      <button mat-raised-button color="primary" routerLink="/checkout">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+</div>

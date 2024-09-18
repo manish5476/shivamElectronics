@@ -1,0 +1,70 @@
+/* Checkout Styles */
+
+.checkout {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.checkout-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.checkout-form h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.checkout-form .form-group {
+  margin-bottom: 15px;
+}
+
+.checkout-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkout-form .form-group input,
+.checkout-form .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkout-form .form-group input[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.checkout-form .form-group input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.order-summary {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.order-summary h3 {
+  font-size: 1.5em;
+}
+
+.order-summary .summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.order-summary .summary-item .item-name {
+  font-weight: bold;
+}
+
+.order-summary .summary-item .item-price {
+  color: #e74c3c;
+}

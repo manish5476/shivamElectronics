@@ -1,0 +1,84 @@
+/* Homepage Styles */
+
+.homepage {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.hero-banner {
+  background: url("/assets/hero-banner.jpg") no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-banner h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 0;
+}
+
+.featured-section,
+.latest-arrivals {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card .product-info {
+  padding: 15px;
+}
+
+.product-card .product-info h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.product-card .product-info .price {
+  color: #e74c3c;
+  font-size: 1.1em;
+}
+
+.navbar {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.navbar a:hover {
+  background-color: #495057;
+  border-radius: 4px;
+}
