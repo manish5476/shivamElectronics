@@ -1,0 +1,116 @@
+<div class="container">
+  <h2>Product Form</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input
+        id="name"
+        formControlName="name"
+        type="text"
+        placeholder="Product Name"
+      />
+    </div>
+
+    <div>
+      <label for="brand">Brand:</label>
+      <input
+        id="brand"
+        formControlName="brand"
+        type="text"
+        placeholder="Brand Name"
+      />
+    </div>
+
+    <div>
+      <label for="price">Price:</label>
+      <input
+        id="price"
+        formControlName="price"
+        type="number"
+        placeholder="Price"
+      />
+    </div>
+
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        placeholder="Product Description"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="stock">Stock:</label>
+      <input
+        id="stock"
+        formControlName="stock"
+        type="number"
+        placeholder="Stock Quantity"
+      />
+    </div>
+
+    <div>
+      <label for="category">Category:</label>
+      <input
+        id="category"
+        formControlName="category"
+        type="text"
+        placeholder="Category"
+      />
+    </div>
+
+    <div formArrayName="features">
+      <label>Features:</label>
+      <div *ngFor="let feature of features.controls; let i = index">
+        <input [formControlName]="i" placeholder="Feature" />
+        <button type="button" (click)="removeFeature(i)">Remove</button>
+      </div>
+      <button type="button" (click)="addFeature()">Add Feature</button>
+    </div>
+
+    <div formArrayName="images">
+      <label>Images:</label>
+      <div *ngFor="let image of images.controls; let i = index">
+        <input [formControlName]="i" placeholder="Image URL" />
+        <button type="button" (click)="removeImage(i)">Remove</button>
+      </div>
+      <button type="button" (click)="addImage()">Add Image</button>
+    </div>
+
+    <div formArrayName="reviews">
+      <label>Reviews:</label>
+      <div
+        *ngFor="let review of reviews.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div>
+          <label for="user">User:</label>
+          <input id="user" formControlName="user" placeholder="User Name" />
+        </div>
+        <div>
+          <label for="rating">Rating:</label>
+          <input
+            id="rating"
+            formControlName="rating"
+            type="number"
+            placeholder="Rating"
+          />
+        </div>
+        <div>
+          <label for="comment">Comment:</label>
+          <input id="comment" formControlName="comment" placeholder="Comment" />
+        </div>
+        <div>
+          <label for="date">Date:</label>
+          <input id="date" formControlName="date" type="date" />
+        </div>
+        <button type="button" (click)="removeReview(i)">Remove Review</button>
+      </div>
+      <button type="button" (click)="addReview()">Add Review</button>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

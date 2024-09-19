@@ -1,0 +1,52 @@
+/* src/styles.css */
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-details {
+  display: flex;
+  gap: 20px;
+}
+
+.product-images img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-summary h4 {
+  margin-top: 10px;
+}
+
+.product-reviews p {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
